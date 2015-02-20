@@ -7,9 +7,36 @@
 
 module.exports = {
 
-  attributes: {
-    username: 'string', 
-    password: 'string'
-  }
-};
+   attributes: {
 
+    name: {
+      type: 'string', 
+      unique: true, 
+      required: true
+    },
+    password:{
+      type: 'string', 
+      minLength: 6, 
+      unique: true
+    }
+
+  }, 
+
+  // hash password
+  beforeCreate: function(attr, next) {
+    var bcrypt = require('bcrypt');
+
+    bcrypt.genSalt(10, function(err, salt) {
+
+      if (err) return next(err);
+
+      bcrypt.hash(attr.password, salt, function(err, hash) {
+        if (err) return next(err);
+
+        attr.password = hash;
+
+        next();
+      });
+    });
+  }
+}

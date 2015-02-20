@@ -5,7 +5,7 @@ grunt.config.set('stylus', {
         files: [{
             expand: true,
             cwd: 'assets/styles/',
-            src: ['importer.styl'], 
+            src: '**/*.styl', 
             dest: '.tmp/public/styles/',
             ext: '.css'
         }]

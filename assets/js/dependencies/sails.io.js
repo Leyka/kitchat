@@ -495,24 +495,6 @@ var parts=["source","protocol","authority","userInfo","user","password","host","
          *  successfully.
          */
         self.on('connect', function socketConnected() {
-
-          consolog.noPrefix(
-            '\n' +
-            '\n' +
-            // '    |>    ' + '\n' +
-            // '  \\___/  '+️
-            // '\n'+
-             '  |>    Now connected to Sails.' + '\n' +
-            '\\___/   For help, see: http://bit.ly/1DmTvgK' + '\n' +
-             '        (using '+io.sails.sdk.platform+' SDK @v'+io.sails.sdk.version+')'+ '\n' +
-            '\n'+
-            '\n'+
-            // '\n'+
-            ''
-            // ' ⚓︎ (development mode)'
-            // 'e.g. to send a GET request to Sails via WebSockets, run:'+ '\n' +
-            // '`io.socket.get("/foo", function serverRespondedWith (body, jwr) { console.log(body); })`'+ '\n' +
-          );
         });
         
         self.on('disconnect', function() {
