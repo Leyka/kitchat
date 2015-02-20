@@ -1,3 +1,3 @@
 # kitchat
 
-a [Sails](http://sailsjs.org) application
+My first Node.js app using Sails
