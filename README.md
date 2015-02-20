@@ -1,3 +1,6 @@
-# kitchat
+# Kitchat
 
-My first Node.js app using Sails
+My first Node.js app using Sails framework
+
+# Run 
+  sails lift
