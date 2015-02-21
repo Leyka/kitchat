@@ -6,15 +6,26 @@ block content
   form(action='/login', type='POST', id='frmLogin')
 
     .row
-      .large-6.columns
-          label Name
-          input.error(type='text', name='name', placeholder='Type your fantastic name here!', required)
-          small(class='error hide')
-          
-      .large-6.columns
-        label Password
-          input(type='password', name='password', placeholder='Then your strong password!', required, pattern='.{6,}')
-          small(class='error hide')
+      .columns 
+        .grpErreur
+            small(class='hide error') 
+              i(class="fa fa-exclamation-circle")  &nbsp;
+              span Erreur
+
     .row
-        input(type='submit', class='button right large-3', value='Let\'s go!')
+      .columns
+        .grpName
+          label name
+          input.error(type='text', name='name', placeholder='Type your fantastic name here!', required)
+          
+    .row
+      .columns
+        .grpPassword
+          label password
+          input(type='password', name='password', placeholder='Then your strong password!', required, pattern='.{6,}')
+
+    .row
+      .columns
+        .grpConnect
+            input(type='submit', class='button', value='Connect')
 
