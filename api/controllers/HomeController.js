@@ -8,6 +8,7 @@
 module.exports = {
   
   index: function(req, res) {
+    console.log('Home');
     res.view('index'); 
   }
 

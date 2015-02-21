@@ -10,8 +10,13 @@ module.exports = {
 	
   // Login
   login: function(req, res) {
-    
-    User.findOneByName(req.body.name).done(function(err, user){
+    console.log(req.body);
+
+    if (!req.body) {
+      return res.redirect('/'); 
+    }
+
+    User.findOneByName(req.body.name, function(err, user){
 
       if (err) 
         res.json({ error: 'DB error' }, 500);
