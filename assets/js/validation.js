@@ -10,19 +10,23 @@ $(document).ready(function(){
       showError('Name and password required'); 
       return false;
     }
-    else if (!name) {
+
+    if (!name) {
       showError('Name required'); 
       return false;
     }
-    else if (!pw) {
+
+    if (!pw) {
       showError('Password required'); 
       return false;
     }
-    else if (pw.length < 6) {
+
+    if (pw.length < 6) {
       showError('Your password must be at least 6 caracters'); 
       return false;
     }
-    else if(!re_pw) {
+    
+    if(!re_pw) {
       showError('Just confirm your password!'); 
       return false;
     }
