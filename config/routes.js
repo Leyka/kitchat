@@ -32,9 +32,10 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'get /': { view: 'index' }, 
-  'get /chat': {view: 'chat'},
-  'get /signup': {view: 'signup'}, 
+  'get /': { view: 'home/index' }, 
+  'get /about': { view: 'home/about' }, 
+  'get /chat': {view: 'chat/index'},
+  'get /signup': {view: 'user/signup'}, 
 
   'post /login': 'UserController.login',
   'post /signup': 'UserController.signup'
