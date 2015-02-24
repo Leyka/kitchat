@@ -38,5 +38,12 @@ module.exports = {
         next();
       });
     });
+  }, 
+
+  signUp: function(inputs, cb) {
+      User.create({
+        name: inputs.name,
+        password: inputs.password
+      }).exec(cb); 
   }
 }

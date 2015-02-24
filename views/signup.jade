@@ -1,0 +1,44 @@
+extends layout
+
+block content 
+  .row.collapse
+    img.circular.hello-img(src='images/zoigberg2.jpg', alt='')
+  form(action='/signup', method='post', id='frmSignup')
+
+    .row
+      .columns 
+        .grpError
+            small(class='hide error') 
+              i(class="fa fa-exclamation-circle")  &nbsp;
+              span Error
+
+    .row
+      .columns
+        .grpName
+          label name
+          input(type='text', id="name", name='name', placeholder='Type your fantastic name here', required)
+          
+    .row
+      .columns
+        .grpPassword
+          label password
+          input(type='password', id="password", name='password', placeholder='Your strong password (6 carac. min)', required, pattern='.{6,}')
+
+    .row
+      .columns
+        .grpPassword
+          label repeat password
+          input(type='password', id="re-password", name='re-password', placeholder='Password confirmation', required, pattern='.{6,}')
+
+
+    .row
+      .columns
+        .grpConnect
+            input(type='submit', id="btnSignup", class='button', value='Sign Up')
+
+    .row 
+      .colums
+          .grpLink
+            a(href="/")  
+              i(class="fa fa-arrow-left")    
+              |  Return to connection
