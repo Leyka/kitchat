@@ -5,12 +5,13 @@ block content
     img.circular.hello-img(src='images/zoigberg.jpg', alt='')
   form(action='/login', method='post', id='frmLogin')
 
-    .row
-      .columns 
-        .grpError
-            small(class='hide error') 
-              i(class="fa fa-exclamation-circle")  &nbsp;
-              span Error
+    - if (error)
+      .row
+        .columns 
+          .grpError
+              small(class='error') 
+                i(class="fa fa-exclamation-circle")  &nbsp;
+                span=error
 
     .row
       .columns
