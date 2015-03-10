@@ -59,20 +59,38 @@ module.exports = {
   // POST /signup
   signup: function(req, res) {
 
-    // Todo: check if user exist 
-    
-    User.signUp({
-      name: req.param('name'),
-      password: req.param('password')
-    }, function(err, user){
+    //check if user exist 
+    User.findOneByName(req.param('name'), function(err, user){
+      if(err)  {
+        console.log(err);
+      } 
 
-        if (err) {
-          res.negotiate(err);
-        }
+      // user exists
+      if (user) {
+        console.log('exists!');
+        res.view({
+          user: user
+        }); 
+      }
+      // new!
+      else {
+        console.log('New new!');
+         User.signUp({
+              name: req.param('name'),
+              password: req.param('password')
+            }, function(err, user){
 
-        // everything is ok
-        req.session.me = user.id;
-        res.redirect('/me');
+                if (err) {
+                  res.negotiate(err);
+                }
+
+                // everything is ok
+                req.session.me = user.id;
+                res.redirect('/me');
+            });
+      }
+
+
     });
   },
 

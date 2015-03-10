@@ -8,9 +8,18 @@ block content
     .row
       .columns 
         .grpError
-            small(class='hide error') 
-              i(class="fa fa-exclamation-circle")  &nbsp;
-              span Error
+            - if (user)
+              small(class='error') 
+                i(class="fa fa-exclamation-circle")  &nbsp;
+                span 
+                 | The name 
+                 = user.name
+                 |  is already choosen. Be creative! :)
+            - else
+              small(class='hide error') 
+                i(class="fa fa-exclamation-circle")
+                span
+
 
     .row
       .columns
