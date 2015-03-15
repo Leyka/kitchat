@@ -1,7 +1,4 @@
 # Kitchat 
 
-My first Node.js app using Sails framework :smiley:
+A Chat app in purpose to learn Node.js and Sails framework 
 
-# Run 
-    $ npm install 
-    $ sails lift
